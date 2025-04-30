@@ -1,10 +1,10 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Input } from "../ui/input";
-import logo from "../../assets/logIn/LOGO.png";
+import logo from "../../assets/logIn/logo.png";
 import envelope from "../../assets/logIn/envelope.svg";
 import lock from "../../assets/logIn/lock.svg";
-import signUp from "../../assets/logIn/house-chimney-medical.svg";
+import signUp from "../../assets/logIn/houseChimneyMedical.svg";
 
 const LogIn = () => {
   const { t } = useTranslation();
