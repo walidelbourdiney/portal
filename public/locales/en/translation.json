@@ -1,0 +1,42 @@
+{
+  "welcome": "Welcome",
+  "logout": "Logout",
+  "buttons": {
+    "pressHere": "Press here",
+    "send": "Send",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "SaveCorrections": "Save corrections",
+    "ConfirmOrder": "Confirm order",
+    "ChangeAppointments": "Change appointments",
+    "Schedule": "Schedule",
+    "reject": "Reject",
+    "ViewAll": "View all",
+    "AvaialbleForReservation": "Available for reservation",
+    "closed": "Closed",
+    "SortBy": "Sort by",
+    "Filter": "Filter",
+    "UpcomingAppointments": "Upcoming Appointments",
+    "reservation": "Reservation",
+    "RescheduleAppointment": "Reschedule appointment",
+    "SelectDate": "Select date",
+    "StartSession": "Start session",
+    "Reactivate": "Reactivate",
+    "Confirm": "Confirm",
+    "Reject": "Reject",
+    "signUp": "Sign up clinic",
+    "signIn": "Sign in"
+  },
+  "logIn": {
+    "title": "Log in to the Rafd platform",
+    "email": "Email",
+    "password": "Password",
+    "remember": "Remember me",
+    "forget": "Forgot password?"
+  },
+  "footer": {
+    "terms": "Terms of use",
+    "privacy": "Privacy policy",
+    "contact": "Contact us"
+  }
+}

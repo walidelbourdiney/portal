@@ -1,0 +1,43 @@
+{
+  "welcome": "مرحبًا",
+  "logout": "تسجيل الخروج",
+  "buttons": {
+    "pressHere": "اضغط هنا",
+    "send": "إرسال",
+    "cancel": "إلغاء",
+    "delete": "حذف",
+    "SaveCorrections": "حفظ التصحيحات",
+    "ConfirmOrder": "تأكيد الطلب",
+    "ChangeAppointments": "تغيير المواعيد",
+    "Schedule": "الجدولة",
+    "reject": "رفض",
+    "ViewAll": "عرض الكل",
+    "AvaialbleForReservation": "متاح للحجز",
+    "closed": "مغلق",
+    "SortBy": "ترتيب حسب",
+    "Filter": "تصفية",
+    "UpcomingAppointments": "المواعيد القادمة",
+    "reservation": "الحجز",
+    "RescheduleAppointment": "إعادة جدولة الموعد",
+    "SelectDate": "اختر التاريخ",
+    "StartSession": "بدء الجلسة",
+    "Reactivate": "إعادة التفعيل",
+    "Confirm": "تأكيد",
+    "Reject": "رفض",
+    "signUp": "إنشاء حساب عيادة",
+    "signIn": "تسجيل الدخول"
+  },
+  "logIn": {
+    "title": "تسجيل دخول لمنصة رفدو",
+    "email": "البريد الالكتروني",
+    "password": "كلمة المرور",
+    "remember": "تذكرني",
+    "forget": "نسيت كلمة المرور؟",
+    "login": "تسجيل الدخول"
+  },
+  "footer": {
+    "terms": "الشروط والأحكام",
+    "privacy": "اتفاقية العمل",
+    "contact": "تواصل معانا"
+  }
+}
