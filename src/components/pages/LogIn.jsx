@@ -1,14 +1,19 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Input } from "../ui/input";
+import logo from "../../assets/logIn/logo.png";
+import envelope from "../../assets/logIn/envelope.svg";
+import lock from "../../assets/logIn/lock.svg";
+import signUp from "../../assets/logIn/houseChimneyMedical.svg";
 
 const LogIn = () => {
   const { t } = useTranslation();
 
   return (
     <main className="w-full px-4">
-      <header className="text-center my-12">
-        <h1 className="text-3xl font-bold text-primary">RAFAD LOGO</h1>
+      <header className="text-center my-12 w-full flex justify-center items-center gap-4">
+        <img src={logo} alt="logo" width={50} />
+        <h1 className="text-3xl font-bold text-primary">{t("welcome")}</h1>
       </header>
 
       <section className="text-center mb-6">
@@ -21,22 +26,44 @@ const LogIn = () => {
         action="#"
         className="flex flex-col items-center gap-4 w-full max-w-xs mx-auto"
       >
+        {/* Email Input with Icon */}
         <div className="w-full">
           <label htmlFor="email" className="block mb-1 text-foreground">
             {t("logIn.email")}
           </label>
-          <Input id="email" type="email" placeholder={t("logIn.email")} />
+          <div className="relative">
+            <img
+              src={envelope}
+              alt="envelope icon"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 opacity-60 ltr:left-3 rtl:right-3"
+            />
+            <Input
+              id="email"
+              type="email"
+              placeholder={t("logIn.email")}
+              className="px-10"
+            />
+          </div>
         </div>
 
+        {/* Password Input with Icon */}
         <div className="w-full">
           <label htmlFor="password" className="block mb-1 text-foreground">
             {t("logIn.password")}
           </label>
-          <Input
-            id="password"
-            type="password"
-            placeholder={t("logIn.password")}
-          />
+          <div className="relative">
+            <img
+              src={lock}
+              alt="lock icon"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 opacity-60 ltr:left-3 rtl:right-3"
+            />
+            <Input
+              id="password"
+              type="password"
+              placeholder={t("logIn.password")}
+              className="px-10"
+            />
+          </div>
         </div>
 
         <div className="w-full text-left">
@@ -54,9 +81,10 @@ const LogIn = () => {
 
         <button
           type="button"
-          className="w-full py-2 rounded-lg border border-primary text-primary bg-white hover:bg-primary/5 transition-colors mb-[137px]"
+          className="w-full py-2 rounded-lg border border-primary text-primary bg-white hover:bg-primary/5 transition-colors mb-[137px] flex items-center justify-center gap-2"
         >
           {t("buttons.signUp")}
+          <img src={signUp} alt="sign up logo" />
         </button>
       </form>
 

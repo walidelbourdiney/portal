@@ -9,7 +9,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import SiteLayout from "./components/Layouts/SiteLayout";
+import SiteLayout from "./components/Layouts/authLayout";
 import LogIn from "./components/pages/LogIn";
 
 function App() {
