@@ -9,16 +9,26 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import SiteLayout from "./components/Layouts/authLayout";
+import AuthLayout from "./components/layouts/authLayout";
+import ProtectedRoute from "./components/ProtectedRoute";
+import Home from "./components/pages/Home";
 import LogIn from "./components/pages/LogIn";
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route>
-        <Route path="/" element={<SiteLayout />}>
+        <Route path="/" element={<AuthLayout />}>
           <Route index element={<LogIn />} />
         </Route>
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute>
+              <Home />
+            </ProtectedRoute>
+          }
+        />
       </Route>
     )
   );

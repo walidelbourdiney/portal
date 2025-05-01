@@ -2,9 +2,11 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useMutation } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
+import { useNavigate } from "react-router-dom";
 
 import { Input } from "../ui/input";
 import axiosInstance from "../../lib/axiosInstance";
+import useAuthStore from "../../stores/authStore";
 
 import logo from "../../assets/logIn/logo.png";
 import envelope from "../../assets/logIn/envelope.svg";
@@ -13,6 +15,8 @@ import signUp from "../../assets/logIn/houseChimneyMedical.svg";
 
 const LogIn = () => {
   const { t } = useTranslation();
+  const { login } = useAuthStore();
+  const navigate = useNavigate();
 
   const validationSchema = () => {
     return Yup.object({
@@ -25,12 +29,18 @@ const LogIn = () => {
 
   const loginMutation = useMutation({
     mutationFn: async (values) => {
-      const res = await axiosInstance.post("/login", values);
+      const res = await axiosInstance.post("/login", {
+        ...values,
+        user_type: "admin",
+      });
       return res.data;
     },
     onSuccess: (data) => {
-      localStorage.setItem("token", data.token);
       console.log("Login successful:", data);
+      localStorage.setItem("token", data.data.token);
+
+      login(data.data.full_name, data.data.token);
+      navigate("/home");
     },
     onError: (error) => {
       console.error("Login failed:", error);

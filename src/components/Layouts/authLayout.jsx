@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import EN from "../../assets/siteLang/EN.svg";
 import AR from "../../assets/siteLang/AR.svg";
 
-const SiteLayout = () => {
+const AuthLayout = () => {
   const { i18n } = useTranslation();
   const { changeLanguage } = i18n;
   useEffect(() => {
@@ -43,4 +43,4 @@ const SiteLayout = () => {
   );
 };
 
-export default SiteLayout;
+export default AuthLayout;
