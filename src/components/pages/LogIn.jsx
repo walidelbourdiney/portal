@@ -1,6 +1,11 @@
-import React from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { useMutation } from "@tanstack/react-query";
 import { useTranslation } from "react-i18next";
+
 import { Input } from "../ui/input";
+import axiosInstance from "../../lib/axiosInstance";
+
 import logo from "../../assets/logIn/logo.png";
 import envelope from "../../assets/logIn/envelope.svg";
 import lock from "../../assets/logIn/lock.svg";
@@ -8,6 +13,40 @@ import signUp from "../../assets/logIn/houseChimneyMedical.svg";
 
 const LogIn = () => {
   const { t } = useTranslation();
+
+  const validationSchema = () => {
+    return Yup.object({
+      email: Yup.string()
+        .email(t("validation.email.invalid"))
+        .required(t("validation.email.required")),
+      password: Yup.string().required(t("validation.password.required")),
+    });
+  };
+
+  const loginMutation = useMutation({
+    mutationFn: async (values) => {
+      const res = await axiosInstance.post("/login", values);
+      return res.data;
+    },
+    onSuccess: (data) => {
+      localStorage.setItem("token", data.token);
+      console.log("Login successful:", data);
+    },
+    onError: (error) => {
+      console.error("Login failed:", error);
+    },
+  });
+
+  const formik = useFormik({
+    initialValues: {
+      email: "",
+      password: "",
+    },
+    validationSchema,
+    onSubmit: (values) => {
+      loginMutation.mutate(values);
+    },
+  });
 
   return (
     <main className="w-full px-4">
@@ -23,11 +62,10 @@ const LogIn = () => {
       </section>
 
       <form
-        action="#"
+        onSubmit={formik.handleSubmit}
         className="flex flex-col items-center gap-4 w-full max-w-xs mx-auto"
       >
-        {/* Email Input with Icon */}
-        <div className="w-full">
+        <div className="w-full  space-y-1">
           <label htmlFor="email" className="block mb-1 text-foreground">
             {t("logIn.email")}
           </label>
@@ -40,14 +78,19 @@ const LogIn = () => {
             <Input
               id="email"
               type="email"
+              name="email"
               placeholder={t("logIn.email")}
               className="px-10"
+              {...formik.getFieldProps("email")}
+              // error={formik.touched.email ? formik.errors.email : ""}
             />
           </div>
+          {formik.touched.email && formik.errors.email && (
+            <p className="text-sm text-destructive">{formik.errors.email}</p>
+          )}
         </div>
 
-        {/* Password Input with Icon */}
-        <div className="w-full">
+        <div className="w-full  space-y-1">
           <label htmlFor="password" className="block mb-1 text-foreground">
             {t("logIn.password")}
           </label>
@@ -60,10 +103,16 @@ const LogIn = () => {
             <Input
               id="password"
               type="password"
+              name="password"
               placeholder={t("logIn.password")}
               className="px-10"
+              {...formik.getFieldProps("password")}
+              // error={formik.touched.password ? formik.errors.password : ""}
             />
           </div>
+          {formik.touched.password && formik.errors.password && (
+            <p className="text-sm text-destructive">{formik.errors.password}</p>
+          )}
         </div>
 
         <div className="w-full text-left">
@@ -74,7 +123,8 @@ const LogIn = () => {
 
         <button
           type="submit"
-          className="w-full py-2 rounded-lg text-white bg-primary hover:bg-primary/90 transition-colors"
+          disabled={loginMutation.isPending}
+          className="w-full py-2 rounded-lg text-white bg-primary hover:bg-primary/90 transition-colors disabled:opacity-60"
         >
           {t("buttons.signIn")}
         </button>

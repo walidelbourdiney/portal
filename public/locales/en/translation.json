@@ -38,5 +38,14 @@
     "terms": "Terms of use",
     "privacy": "Privacy policy",
     "contact": "Contact us"
+  },
+  "validation": {
+    "email": {
+      "required": "Email is required",
+      "invalid": "Invalid email or password"
+    },
+    "password": {
+      "required": "Password is required"
+    }
   }
 }
