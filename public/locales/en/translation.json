@@ -25,7 +25,8 @@
     "Confirm": "Confirm",
     "Reject": "Reject",
     "signUp": "Sign up clinic",
-    "signIn": "Sign in"
+    "signIn": "Sign in",
+    "logout": "Logout"
   },
   "logIn": {
     "title": "Log in to the Rafd platform",
