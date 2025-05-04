@@ -11,8 +11,9 @@ import {
 } from "react-router-dom";
 import AuthLayout from "./components/layouts/authLayout";
 import ProtectedRoute from "./components/ProtectedRoute";
-import Home from "./components/pages/Home";
+import Home from "./components/Layouts/adminLayout";
 import LogIn from "./components/pages/LogIn";
+import AdminLayout from "./components/Layouts/adminLayout";
 
 function App() {
   const router = createBrowserRouter(
@@ -25,7 +26,7 @@ function App() {
           path="/home"
           element={
             <ProtectedRoute>
-              <Home />
+              <AdminLayout />
             </ProtectedRoute>
           }
         />
