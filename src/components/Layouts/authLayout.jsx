@@ -8,6 +8,8 @@ import AR from "../../assets/siteLang/AR.svg";
 const AuthLayout = () => {
   const { i18n } = useTranslation();
   const { changeLanguage } = i18n;
+  const user = localStorage.getItem("auth-storage");
+
   useEffect(() => {
     const currentLang = i18n.language;
     document.documentElement.lang = currentLang;
@@ -18,6 +20,11 @@ const AuthLayout = () => {
     const newLang = i18n.language === "en" ? "ar" : "en";
     changeLanguage(newLang);
   };
+
+  if (user) {
+    window.location.href = "/home";
+  }
+
   return (
     <>
       <header className="bg-white flex container mb-[64px]">

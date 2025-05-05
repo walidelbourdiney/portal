@@ -48,5 +48,13 @@
     "password": {
       "required": "Password is required"
     }
+  },
+  "sidebar": {
+    "main": "Main",
+    "clients": "Clients",
+    "ratings": "Ratings",
+    "ourParteners": "Our parteners",
+    "Operations": "Operations",
+    "settings": "settings"
   }
 }

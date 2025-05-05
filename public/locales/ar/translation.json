@@ -49,5 +49,13 @@
     "password": {
       "required": "كلمة المرور مطلوبة"
     }
+  },
+  "sidebar": {
+    "main": "الرئيسية",
+    "clients": "العملاء",
+    "ratings": "التقييمات",
+    "ourParteners": "شركاؤنا",
+    "Operations": "العمليات",
+    "settings": "الإعدادات"
   }
 }
