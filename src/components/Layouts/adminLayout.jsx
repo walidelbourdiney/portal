@@ -21,7 +21,6 @@ import burger from "../../assets/adminPage/burger.svg";
 
 const AdminLayout = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [asideIsOpen, setAsideIsOpen] = useState(false);
   const dropdownRef = useRef(null);
   const navigate = useNavigate();
   const { i18n } = useTranslation();
@@ -57,7 +56,7 @@ const AdminLayout = () => {
       {/* Header */}
       <header className="bg-white flex w-full mb-[24px]  py-4 px-6 justify-between items-center  z-100000 sticky transition-all duration-300 ease-in-out">
         <div className="left flex items-center gap-4 justify-start w-1/3">
-          <div className="relative text-right" ref={dropdownRef}>
+          <div className="relative text-right min-w-36" ref={dropdownRef}>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="flex items-center gap-4 text-gray-800 hover:text-black focus:outline-none"
@@ -132,11 +131,11 @@ const AdminLayout = () => {
 
       <main
         className={`flex flex-col flex-1 h-screen ${
-          lang === "ar" ? "md:ml-64" : "md:mr-64"
+          lang === "ar" ? "md:ml-28" : "md:mr-28"
         }`}
       >
         <aside
-          className={`hidden md:flex bg-transparent flex-col fixed top-0 bottom-0 ${
+          className={`hidden md:flex bg-white flex-col fixed top-0 bottom-0 ${
             lang === "ar" ? "left-0" : "right-0"
           } w-[88px] bg-transparent shadow-lg  mt-14 z-2`}
         >
