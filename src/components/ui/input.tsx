@@ -43,15 +43,14 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             "w-full px-4 py-2.5 rounded-lg border border-secondary",
             "bg-transparent outline-none",
             "text-base placeholder:text-secondary-light",
-            error ? "border-destructive text-destructive" 
-                 : "border-border focus:border-primary",
+            error
+              ? "border-destructive text-destructive"
+              : "border-border focus:border-primary",
             className
           )}
           {...props}
         />
-        {error ? (
-          <p className="text-sm text-destructive">{error}</p>
-        ) : null}
+        {error ? <p className="text-sm text-destructive">{error}</p> : null}
       </div>
     );
   }
