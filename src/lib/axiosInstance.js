@@ -30,7 +30,6 @@ axiosInstance.interceptors.request.use(
     return config;
   },
   (error) => {
-    // Handle request error
     return Promise.reject(error);
   }
 );
@@ -38,16 +37,14 @@ axiosInstance.interceptors.request.use(
 // Response Interceptor
 axiosInstance.interceptors.response.use(
   (response) => {
-    // Return response as-is
     return response;
   },
   (error) => {
-    // Global error handling (e.g., redirect on 401)
-    if (error.response && error.response.status === 401) {
-      // Example (not active in original code):
-      // window.location.href = '/login';
+    // Handle 401 Unauthorized errors
+    if (error.response?.status === 401) {
+      localStorage.removeItem("token");
+      window.location.href = "/login";
     }
-
     return Promise.reject(error);
   }
 );
