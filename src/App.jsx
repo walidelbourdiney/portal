@@ -9,7 +9,7 @@ import {
   Route,
   RouterProvider,
 } from "react-router-dom";
-import AuthLayout from "./components/layouts/authLayout";
+import AuthLayout from "./components/Layouts/authLayout";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./components/Layouts/adminLayout";
 import LogIn from "./components/pages/LogIn";
