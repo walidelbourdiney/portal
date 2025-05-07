@@ -12,6 +12,7 @@ import logo from "../../assets/logIn/logo.png";
 import envelope from "../../assets/logIn/envelope.svg";
 import lock from "../../assets/logIn/lock.svg";
 import signUp from "../../assets/logIn/houseChimneyMedical.svg";
+import { routingPaths } from "../../App";
 
 const LogIn = () => {
   const { t } = useTranslation();
@@ -37,10 +38,11 @@ const LogIn = () => {
     },
     onSuccess: (data) => {
       console.log("Login successful:", data);
+
       localStorage.setItem("token", data.data.token);
 
-      login(data.data.full_name, data.data.token);
-      navigate("/home");
+      login(data.data);
+      navigate(routingPaths.home);
     },
     onError: (error) => {
       console.error("Login failed:", error);

@@ -5,10 +5,9 @@ const useAuthStore = create((set) => ({
   token: null,
   isAuthenticated: false,
 
-  login: (userEmail, token) =>
+  login: (userData) =>
     set({
-      user: userEmail,
-      token: token,
+      ...userData,
       isAuthenticated: true,
     }),
 

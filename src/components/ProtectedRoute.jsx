@@ -1,10 +1,27 @@
 import { Navigate } from "react-router-dom";
-import useAuthStore from "../stores/authStore";
+import { useQuery } from "@tanstack/react-query";
+import axiosInstance from "../lib/axiosInstance";
 
 const ProtectedRoute = ({ children }) => {
-  const isAuthenticated = useAuthStore((state) => state.isAuthenticated);
+  const { data, isLoading, isError, error } = useQuery({
+    queryKey: ["userData"],
+    queryFn: async () => {
+      const response = await axiosInstance.get("/accounts/me");
+      return response.data;
+    },
+  });
+  console.log("User Data:", data);
+  console.log("User loading:", isLoading);
+  console.log("User error:", error);
+  if (isLoading)
+    return (
+      <div className="text-center text-2xl text-primary mt-10 animate-bounce">
+        Loading...
+      </div>
+    );
+  if (isError) return <div>Error loading user data</div>;
 
-  return isAuthenticated ? children : <Navigate to="/login" replace />;
+  return data ? children : <Navigate to="/login" replace />;
 };
 
 export default ProtectedRoute;

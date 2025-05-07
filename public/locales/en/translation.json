@@ -25,7 +25,8 @@
     "Confirm": "Confirm",
     "Reject": "Reject",
     "signUp": "Sign up clinic",
-    "signIn": "Sign in"
+    "signIn": "Sign in",
+    "logout": "Logout"
   },
   "logIn": {
     "title": "Log in to the Rafd platform",
@@ -47,5 +48,13 @@
     "password": {
       "required": "Password is required"
     }
+  },
+  "sidebar": {
+    "main": "Main",
+    "clients": "Clients",
+    "ratings": "Ratings",
+    "ourParteners": "Our parteners",
+    "Operations": "Operations",
+    "settings": "settings"
   }
 }
