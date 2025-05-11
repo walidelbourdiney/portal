@@ -3,6 +3,7 @@ import { Navigate, Outlet, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useState, useRef, useEffect } from "react";
 import useAuthStore from "../../stores/authStore";
+import SearchBar from "../Search/SearchBar";
 
 // assets
 import EN from "../../assets/siteLang/EN.svg";
@@ -109,7 +110,10 @@ const AdminLayout = () => {
             )}
           </button>
         </div>
-        <div className="right flex items-center gap-4 justify-center ">
+        <div className="center flex-1 mx-4">
+          <SearchBar />
+        </div>
+        <div className="right flex items-center gap-4 justify-center">
           <img src={logo} alt="Site Logo" className="w-10 h-10" />
           <div className="burger">
             <img

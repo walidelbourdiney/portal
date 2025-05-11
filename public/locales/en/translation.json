@@ -56,5 +56,10 @@
     "ourParteners": "Our parteners",
     "Operations": "Operations",
     "settings": "settings"
+  },
+  "search": {
+    "placeholder": "Search by name, phone, or city...",
+    "results": "Search Results for",
+    "noResults": "No results found"
   }
 }

@@ -94,7 +94,6 @@ const LogIn = () => {
               placeholder={t("logIn.email")}
               className="px-10"
               {...formik.getFieldProps("email")}
-              // error={formik.touched.email ? formik.errors.email : ""}
             />
           </div>
           {formik.touched.email && formik.errors.email && (
@@ -119,7 +118,6 @@ const LogIn = () => {
               placeholder={t("logIn.password")}
               className="px-10"
               {...formik.getFieldProps("password")}
-              // error={formik.touched.password ? formik.errors.password : ""}
             />
           </div>
           {formik.touched.password && formik.errors.password && (

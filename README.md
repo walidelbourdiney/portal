@@ -1,31 +1,27 @@
-# Admin Portal
+#  Admin Portal
 
 A modern, responsive admin portal built with React and Vite, featuring a beautiful UI and robust functionality. This project demonstrates my skills in frontend development, focusing on user experience, internationalization, and modern web development practices.
 
 ## 🌟 Features
 
 - **Bilingual Support (Arabic/English)**
-
   - Full RTL/LTR layout support
   - Seamless language switching
   - Culturally appropriate UI adaptations
 
 - **Modern Authentication System**
-
   - Secure login functionality
   - Protected routes
   - Token-based authentication
   - Form validation with Formik and Yup
 
 - **Responsive Design**
-
   - Mobile-first approach
   - Tailwind CSS for styling
   - Beautiful and consistent UI components
   - Adaptive layouts for all screen sizes
 
 - **State Management**
-
   - Zustand for global state management
   - React Query for server state management
   - Efficient data fetching and caching
@@ -40,13 +36,11 @@ A modern, responsive admin portal built with React and Vite, featuring a beautif
 ## 🛠️ Technical Highlights
 
 - **Component Architecture**
-
   - Reusable UI components
   - Clean and maintainable code structure
   - Separation of concerns
 
 - **API Integration**
-
   - Axios for API requests
   - Custom interceptors for authentication
   - Error handling and loading states
@@ -59,25 +53,21 @@ A modern, responsive admin portal built with React and Vite, featuring a beautif
 ## 🚀 Getting Started
 
 1. Clone the repository
-
 ```bash
 git clone [repository-url]
 ```
 
 2. Install dependencies
-
 ```bash
 npm install
 ```
 
 3. Create a `.env` file in the root directory and add your environment variables:
-
 ```env
 VITE_APP_API_URL=your_api_url_here
 ```
 
 4. Start the development server
-
 ```bash
 npm run dev
 ```

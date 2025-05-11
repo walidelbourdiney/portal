@@ -15,11 +15,13 @@ import Home from "./components/Layouts/adminLayout";
 import LogIn from "./components/pages/LogIn";
 import AdminLayout from "./components/Layouts/adminLayout";
 import Customers from "./components/pages/Customers";
+import SearchResults from "./pages/SearchResults";
 
 export const routingPaths = {
   home: "/",
   login: "/login",
   customers: "/customers",
+  search: "/search",
 };
 
 function App() {
@@ -40,6 +42,7 @@ function App() {
           }
         >
           <Route index element={<Customers />} />
+          <Route path={routingPaths.search} element={<SearchResults />} />
         </Route>
         <Route path="*" element={<div>404 Not Found</div>} />
       </Route>
