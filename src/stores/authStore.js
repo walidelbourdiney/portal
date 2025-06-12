@@ -5,9 +5,10 @@ const useAuthStore = create((set) => ({
   token: null,
   isAuthenticated: false,
 
-  login: (userData) =>
+  login: (apiResponseData) =>
     set({
-      ...userData,
+      user: apiResponseData.user, // Assuming user details are in apiResponseData.user
+      token: apiResponseData.token, // Assuming token is in apiResponseData.token
       isAuthenticated: true,
     }),
 
