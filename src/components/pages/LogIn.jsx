@@ -77,6 +77,17 @@ const LogIn = () => {
         onSubmit={formik.handleSubmit}
         className="flex flex-col items-center gap-4 w-full max-w-xs mx-auto"
       >
+        <div className="mb-4 p-3 bg-gray-100 rounded-md">
+          <p className="text-sm text-gray-700">
+            For Vercel domain users:
+          </p>
+          <p className="text-sm text-gray-700">
+            Email: admin@gmail.com
+          </p>
+          <p className="text-sm text-gray-700">
+            Password: admin123
+          </p>
+        </div>
         <div className="w-full  space-y-1">
           <label htmlFor="email" className="block mb-1 text-foreground">
             {t("logIn.email")}
